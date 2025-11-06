@@ -22,18 +22,4 @@ public class Site {
         }
         return ResidentialSite.getBaseAmount(_units, _rate);
     }
-
-    public static double getBillableAmount(int _units, int _rate) {
-        double base = getAmount(_units, _rate);
-        double tax = getAmount(base);
-        return base + tax;
-    }
-
-    private static double getAmount(double base) {
-        return ResidentialSite.getTaxAmount(base);
-    }
-
-    private static int getAmount(int _units, int _rate) {
-        return ResidentialSite.getBaseAmount(_units, _rate);
-    }
 }
