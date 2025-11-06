@@ -2,7 +2,7 @@ public class ResidentialSite {
 
     ResidentialSite() {}
 
-    private static double getTaxAmount(double base) {
+    public double getTaxAmount(double base) {
         return base * Site.TAX_RATE;
     }
 
