@@ -3,9 +3,9 @@ public class Site {
 
     public Site() {}
 
-    public static double getBillableAmount(int _units, int _rate) {
-        double base = getBaseAmount(_units, _rate);
-        double tax = getTaxAmount(base);
+    public static double getBillableAmount(int _units, int _rate, boolean lifelineTrue) {
+        double base = getBaseAmount(_units, _rate, lifelineTrue);
+        double tax = getTaxAmount(base, lifelineTrue);
         return base + tax;
     }
 
