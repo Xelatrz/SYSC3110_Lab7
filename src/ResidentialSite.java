@@ -6,7 +6,7 @@ public class ResidentialSite {
         return base * Site.TAX_RATE;
     }
 
-    private static int getBaseAmount(int _units, int _rate) {
+    public int getBaseAmount(int _units, int _rate) {
         return _units * _rate;
     }
 }
