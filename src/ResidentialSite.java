@@ -4,8 +4,12 @@ public class ResidentialSite {
 
     public double getBillableAmount(int _units, int _rate) {
         double base = getBaseAmount(_units, _rate);
-        double tax = base * Site.TAX_RATE;
+        double tax = getTaxAmount(base);
         return base + tax;
+    }
+
+    private static double getTaxAmount(double base) {
+        return base * Site.TAX_RATE;
     }
 
     private static int getBaseAmount(int _units, int _rate) {
