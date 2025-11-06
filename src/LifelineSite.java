@@ -4,11 +4,11 @@ public class LifelineSite {
 
     public static double getBillableAmount(int _units, int _rate) {
         double base = getBaseAmount(_units, _rate);
-        double tax = getTaxAmount(base);
+        double tax = new LifelineSite().getTaxAmount(base);
         return base + tax;
     }
 
-    private static double getTaxAmount(double base) {
+    public double getTaxAmount(double base) {
         return base * Site.TAX_RATE * 0.2;
     }
 
