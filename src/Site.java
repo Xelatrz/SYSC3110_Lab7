@@ -4,8 +4,8 @@ public class Site {
     public Site() {}
 
     public static double getBillableAmount(int _units, int _rate) {
-        double base = new LifelineSite().getBaseAmount(_units, _rate);
-        double tax = new LifelineSite().getTaxAmount(base);
+        double base = LifelineSite.getBaseAmount(_units, _rate);
+        double tax = LifelineSite.getTaxAmount(base);
         return base + tax;
     }
 
