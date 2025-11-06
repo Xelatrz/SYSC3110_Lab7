@@ -5,8 +5,15 @@ public class Site {
 
     public static double getBillableAmount(int _units, int _rate) {
         double base = getBaseAmount(_units, _rate);
-        double tax = LifelineSite.getTaxAmount(base);
+        double tax = getTaxAmount(base);
         return base + tax;
+    }
+
+    private static double getTaxAmount(double base, boolean lifelineTrue) {
+        if (lifelineTrue) {
+            return LifelineSite.getTaxAmount(base);
+        }
+        return ResidentialSite.getTaxAmount(base);
     }
 
     private static double getBaseAmount(int _units, int _rate, boolean lifelineTrue) {
@@ -18,8 +25,12 @@ public class Site {
 
     public static double getBillableAmount(int _units, int _rate) {
         double base = getAmount(_units, _rate);
-        double tax = ResidentialSite.getTaxAmount(base);
+        double tax = getAmount(base);
         return base + tax;
+    }
+
+    private static double getAmount(double base) {
+        return ResidentialSite.getTaxAmount(base);
     }
 
     private static int getAmount(int _units, int _rate) {
