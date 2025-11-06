@@ -2,7 +2,7 @@ public class ResidentialSite {
 
     ResidentialSite() {}
 
-    public double getBillableAmount(int _units, int _rate) {
+    public static double getBillableAmount(int _units, int _rate) {
         double base = getBaseAmount(_units, _rate);
         double tax = getTaxAmount(base);
         return base + tax;
