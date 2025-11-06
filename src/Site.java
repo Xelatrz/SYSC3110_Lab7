@@ -8,4 +8,10 @@ public class Site {
         double tax = new LifelineSite().getTaxAmount(base);
         return base + tax;
     }
+
+    public static double getBillableAmount(int _units, int _rate) {
+        double base = ResidentialSite.getBaseAmount(_units, _rate);
+        double tax = ResidentialSite.getTaxAmount(base);
+        return base + tax;
+    }
 }
